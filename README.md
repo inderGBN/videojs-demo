@@ -24,11 +24,11 @@ Make sure you have the following installed:
 ### 📦 Installation
 
 1. **Create a new directory and navigate to it**
-2. **Clone the repository:**
+2. **Clone the repository and start up:**
 ```bash
 git clone https://github.com/inderGBN/videojs-demo.git
 cd videojs-demo
 npm install
 npm start
 
-go to [http://localhost:3000/](http://localhost:3000/)
+go to http://localhost:3000/
