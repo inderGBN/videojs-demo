@@ -1,0 +1,133 @@
+:root {
+  --blue-main: #0032aa;
+  --blue-hover: #000f55;
+  --blue-active: #1e50ff;
+  --text-color: #ffffff;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: var(--blue-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button {
+  background: var(--blue-main);
+  border: none;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: var(--blue-hover);
+}
+
+button.active {
+  background: var(--blue-active);
+  box-shadow: 0 0 5px var(--blue-active);
+}
+
+/* Video container */
+.video-container {
+  margin-top: 2rem;
+  width: 80%;
+  max-width: 900px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Vertical mode max width */
+.video-container.vertical {
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Video.js Blue Theme Customizations */
+.vjs-theme-blue .vjs-control-bar {
+  background-color: var(--blue-main) !important;
+}
+
+.vjs-theme-blue .vjs-progress-holder {
+  background-color: var(--blue-hover) !important;
+}
+
+.vjs-theme-blue .vjs-play-progress {
+  background-color: var(--blue-active) !important;
+}
+
+/* Big Play Button */
+.vjs-big-play-button {
+  background-color: var(--blue-main) !important;
+  border-radius: 50% !important;
+  width: 80px !important;
+  height: 80px !important;
+  top: 50% !important;
+  left: 50% !important;
+  font-size: 3em !important;
+  line-height: 2.5em !important;
+  margin-top: -40px !important; 
+  margin-left: -40px !important;
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.vjs-big-play-button:hover {
+  background-color: var(--blue-hover);
+  transform: scale(1.1);
+}
+
+/* Forward / Rewind Buttons */
+.vjs-rewind-button,
+.vjs-forward-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(0, 50, 170, 0.8);
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 10;
+  border: 1px solid;
+}
+
+.vjs-rewind-button:hover,
+.vjs-forward-button:hover {
+  background-color: var(--blue-hover);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.vjs-rewind-button { left: 15%; }
+.vjs-forward-button { right: 15%; }
+
+.video-js:hover .vjs-rewind-button,
+.video-js:hover .vjs-forward-button {
+  opacity: 1;
+}

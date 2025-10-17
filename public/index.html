@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video.js Demo</title>
+  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-overlay/1.1.0/videojs-overlay.css" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="controls">
+    <div class="toggle-group">
+      <label>Mode:</label>
+      <button id="vodBtn" class="active">VOD</button>
+      <button id="liveBtn">Live</button>
+    </div>
+    <div class="toggle-group">
+      <label>Aspect Ratio:</label>
+      <button id="ratio169Btn" class="active">16:9</button>
+      <button id="ratio916Btn">9:16</button>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <video
+      id="my-video"
+      class="video-js vjs-theme-blue vjs-fluid"
+      controls
+      muted
+      preload="auto"
+      poster="https://vjs.zencdn.net/v/oceans.png"
+      data-setup={}
+    >
+      <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- Video.js core -->
+  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+
+  <!-- New bit -->
+    <!-- Google IMA SDK -->
+    <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+
+    <!-- Video.js Ads + IMA plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.9.0/dist/videojs-contrib-ads.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-ima@1.9.0/dist/videojs.ima.min.js"></script>
+
+    <!-- Prebid.js core -->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/prebid@8.20.0/dist/prebid.min.js"></script> -->
+      <script src="prebid.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
